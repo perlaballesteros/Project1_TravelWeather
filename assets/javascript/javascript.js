@@ -184,7 +184,7 @@ function undergroundWeatherAPI(latitude,longitude,marker,passTime,durationDays,c
           }
         }
       }
-      string=string+"</br>"+weekDay+" "+time+"</br>"+condition+"</br>"+icon+temp;
+      string=string+"</br>"+weekDay+" "+time+"</br>"+icon+temp+"</br>"+condition;
 
       //OPENING WINDOW ABOVE MARKER WHEN CLICKED
       infowindowMarker.setContent(string);
@@ -319,7 +319,7 @@ function calcRoute() {
                 var passTimefromArray=passTime[0];
                 var durationDaysfromArray=passTime[1];
                
-                string=string+"</br>"+"<strong>"+waypointAddress+"</strong>";
+                string=string+"</br>"+"<strong>"+waypointAddress+"</strong>"+"</br>"+"<font size='2' color='red'><i>"+toWaypointdurationString+"</i></font>";
 
                 //console.log("currentDayoftheYear before leavingtounderweatherfnction "+currentDayoftheYear);
                 //CALLING THE WEATHER API AND PASSING LAT,LONG,AND MARKER
@@ -601,4 +601,3 @@ function geolocate() {
     });
   }
 };
-
