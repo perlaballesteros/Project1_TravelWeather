@@ -541,9 +541,8 @@ function detailedWeather(){
             
             //Attach lines of weather info to weather item div
             weatherListItem.append(detailedLocation);
-
-            weatherListItem.append(time);
             weatherListItem.append(durationDisplay);
+            weatherListItem.append(time);
             weatherListItem.append(weekDay);
             weatherListItem.append(icon);
             weatherListItem.append(temp);
