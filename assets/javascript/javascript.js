@@ -125,7 +125,7 @@ function undergroundWeatherAPI(latitude,longitude,marker,passTime,durationDays,c
 
   var undergroundWeatherapiKey="b26eea70cef99b97";
   var undergroundWeatherURL="https://api.wunderground.com/api/"+undergroundWeatherapiKey+"/hourly10day/q/"+latitude+","+longitude+".json";
-  //console.log(undergroundWeatherURL);
+  console.log(undergroundWeatherURL);
   $.ajax({
 
     //makesure you change this when user inputs
@@ -293,7 +293,7 @@ function calcRoute() {
           //get the currentTime at the given marker by using the underWeatherAPi
           var undergroundWeatherapiKey="b26eea70cef99b97";
           var undergroundWeatherURL="https://api.wunderground.com/api/"+undergroundWeatherapiKey+"/hourly10day/q/"+makerPositionLat+","+makerPositionLng+".json";
-    //            console.log(undergroundWeatherURL);
+          console.log("from divs"+undergroundWeatherURL);
     
           $.ajax({
     
