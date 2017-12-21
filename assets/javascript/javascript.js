@@ -434,14 +434,19 @@ function detailedWeather(){
 
         var waypointAddress=response.routes[0].legs[0].end_address;
         var toWaypointdurationString=response.routes[0].legs[0].duration.text;
+       
         //determine if waypoint is mins/hrs/days
         //waypointpasstime and duration days stored as an array
         var passTimedurationDays = waypointDuration(toWaypointdurationString,currentTime);
         var durationDays=passTimedurationDays[1];
         var waypointPassTime=passTimedurationDays[0];
+
         //console.log("array from function" +passTimedurationDays);
         //create location Title for each in the div
-        var detailedLocation= $("<div>").text(waypointAddress);  
+
+        var detailedLocation= $("<div>").text(waypointAddress).addClass("detailLocation");
+        var durationDisplay=$("<div>").text(toWaypointdurationString).addClass("duration").attr("id","duration-"+i);
+
         //console.log("Coordinates out: " + waypointLocationLat + "," + waypointLocationLng);
 
         //Modifications made to the WEATHER API to elivate the need for a marker parameter and output data to div instead of info window
@@ -536,13 +541,16 @@ function detailedWeather(){
             
             //Attach lines of weather info to weather item div
             weatherListItem.append(detailedLocation);
+
             weatherListItem.append(time);
+            weatherListItem.append(durationDisplay);
             weatherListItem.append(weekDay);
             weatherListItem.append(icon);
             weatherListItem.append(temp);
             weatherListItem.append(condition);
             weatherListItem.append(wind);
             weatherListItem.append(humidity);
+            
             //output detailed wether div to detailed weather container
           }
         });
